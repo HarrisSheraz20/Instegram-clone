@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Post from "./Components/Post/Post.js";
-import { auth, db } from "./Firebase";
+import { auth, db } from "./firebase";
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Input } from "@material-ui/core";
+import ImageUpload from "./Components/ImageUpload/ImageUpload";
 
 function getModalStyle() {
   const top = 50;
@@ -96,6 +97,11 @@ function App() {
 
   return (
     <div className="app">
+
+      {user.displayName }
+
+      <ImageUpload username={user.displayName} />
+
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
           <form className="app__signup">
