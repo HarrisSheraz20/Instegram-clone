@@ -8,6 +8,7 @@ import { Button, Input } from "@material-ui/core";
 import ImageUpload from "./Components/ImageUpload/ImageUpload";
 import InstagramEmbed from "react-instagram-embed";
 
+
 function getModalStyle() {
   const top = 50;
   const left = 50;
@@ -191,6 +192,8 @@ function App() {
           {posts.map(({ id, post }) => (
             <Post
               key={id}
+              postId={id} 
+              user={user}
               username={post.username}
               caption={post.caption}
               imageUrl={post.imageUrl}
@@ -199,7 +202,7 @@ function App() {
         </div>
         <div className="app__postsRight">
           <InstagramEmbed
-            url="https://www.instagram.com/p/B_uf9dmAGPw/"
+            url="https://www.instagram.com/harrissheraz2018/"
             clientAccessToken="123|456"
             maxWidth={320}
             hideCaption={false}
